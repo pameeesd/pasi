@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pasi</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section id="intro" class="intro">
+        <div class="intro__content">
+          <p class="eyebrow">Una aventura de 12 recuerdos</p>
+          <h1>pasi</h1>
+          <p>
+            Recorre este pequeño mapa, encuentra cada fragmento de nuestra
+            historia y desbloquea la carta final.
+          </p>
+          <button id="startButton" class="primary-button">Comenzar aventura</button>
+        </div>
+      </section>
+
+      <section id="game" class="game is-hidden" aria-label="Mapa de recuerdos">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">pasi</p>
+            <h2>Mapa de nuestros meses</h2>
+          </div>
+          <div class="progress">
+            <span id="progressText">0 / 12 recuerdos</span>
+            <div class="progress__track">
+              <div id="progressFill" class="progress__fill"></div>
+            </div>
+          </div>
+        </header>
+
+        <div class="stage-wrap">
+          <canvas id="world" width="960" height="640" aria-label="Mundo 2D"></canvas>
+          <div id="hint" class="hint is-hidden">Presiona E para recordar</div>
+        </div>
+
+        <footer class="controls">
+          <span>Muévete con WASD o flechas</span>
+          <span>Interactúa con E</span>
+        </footer>
+      </section>
+    </main>
+
+    <dialog id="memoryDialog" class="memory-dialog">
+      <button id="closeDialog" class="icon-button" aria-label="Cerrar">×</button>
+      <p id="memoryMonth" class="eyebrow"></p>
+      <h3 id="memoryTitle"></h3>
+      <div id="memoryPhoto" class="memory-photo"></div>
+      <p id="memoryPlace" class="memory-place"></p>
+      <p id="memoryText"></p>
+      <strong id="memoryReward" class="reward"></strong>
+      <button id="claimMemory" class="primary-button">Guardar fragmento</button>
+    </dialog>
+
+    <dialog id="finalDialog" class="memory-dialog final-dialog">
+      <p class="eyebrow">El corazón de pasi está completo</p>
+      <h3>La carta final</h3>
+      <p>
+        Si estás leyendo esto, recorriste los 12 lugares donde guardé un pedacito
+        de lo que hemos vivido. Quería hacerte algo que se sintiera como tú:
+        tierno, luminoso, jugable y lleno de color.
+      </p>
+      <p>
+        Este texto es placeholder, pero aquí irá la carta de verdad: esa que dice
+        con calma todo lo que has significado en este primer año.
+      </p>
+      <button id="closeFinal" class="primary-button">Volver al mapa</button>
+    </dialog>
+
+    <script src="main.js"></script>
+  </body>
+</html>
